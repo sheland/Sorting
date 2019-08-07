@@ -12,3 +12,6 @@ function bubbleSortBasic(array) {
 }
 let list = [9, 2, 5, 6, 4, 3, 7, 10, 8];
 console.log(bubbleSortBasic(list))
+
+//Time complexity is O(n^2) because for N elements, you perform n^2 comparisons. Perform outer loop N times to get through
+//entire array & for each iteration, must iterate another N times w/ inner loop. N steps * N steps = N^2
