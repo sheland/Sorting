@@ -15,3 +15,4 @@ let list = [3,4,8,8]
 console.log(hasDuplicateValue(list))
 
 //Time complexity is O(n) because is makes N comparisons for N data elements in worst case scenario 
+//Linear solution
