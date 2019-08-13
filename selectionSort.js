@@ -5,13 +5,13 @@ var selectionSort = function (arr) {
         let lowestNumberIndex = i
 
         for(let j = i + 1; j< arrLast; j++) {
-            if (arr[j] < arr[lowestNumberIndex]) {
+            if (arr[j] < arr[lowestNumberIndex]) { //comparison 
                 lowestNumberIndex = j
             }      
         }
-        if (lowestNumberIndex != i) {
-            let temp = arr[i] //2
-            arr[i] = arr[lowestNumberIndex]
+        if (lowestNumberIndex != i) { //add condition check 
+            let temp = arr[i] 
+            arr[i] = arr[lowestNumberIndex] //swap
             arr[lowestNumberIndex] = temp
         }
     }
