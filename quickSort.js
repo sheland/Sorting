@@ -12,25 +12,28 @@ function quickSort(arr, start, end) {
 }
 
 function partition(arr, start, end) {
-    let pivotIndex = end 
+    let pivotIndex = end //last value in arr
     let pivotValue = arr[end]
-    let endPointer = arr[end - 1] //end pointer start w/ value left of pivot
+    let endPointer = arr[-2] //end pointer start w/ value left of pivot
+
     
-    while (start <= end) {
-        if (arr[start] < pivotValue) { //increment until value > than pivot is found
+    while (start < end) { // if start reaches value > than piviot, stops incrementing  
+        while (arr[start] < pivotValue) { 
             start++
-        } else {
-            swap(arr,start, endPointer)
-        }
-        if (arr[endPointer] > pivotValue) { //decrement until value < than pivot is found
+        } 
+        while (arr[endPointer] > pivotValue) { //if endPointer reaches value < than piviot, stops decrementing 
             endPointer--
-        } else {
-            swap(arr,start, endPointer)
         }
+        if (start >= endPointer) { //if start pointer passes endPointer || both pointers meet, pointers stop moving 
+            break //exit while loop 
+        } else {
+            swap(arr,start, endPointer) //start pointer & endPointer swap values 
+        }
+        
     }
     
-    swap(arr,start, pivotIndex)
-    return start
+    swap(arr,start, pivotIndex) //start pointer's position swaps w/ pivotIndex
+    return pivotIndex 
 
     
 }
